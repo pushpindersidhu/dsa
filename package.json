@@ -2,8 +2,10 @@
   "name": "dsa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/pushpindersidhu/dsa/issues"
   },
-  "homepage": "https://github.com/pushpindersidhu/dsa#readme"
+  "homepage": "https://github.com/pushpindersidhu/dsa#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
 }
