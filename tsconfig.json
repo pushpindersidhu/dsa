@@ -4,7 +4,7 @@
     "experimentalDecorators": true, 
     "emitDecoratorMetadata": true, 
     "module": "commonjs",
-    "rootDir": "./src", 
+    "rootDirs": ["./src", "./tests"], 
     "outDir": "./dist", 
     "removeComments": true, 
     "esModuleInterop": true, 
