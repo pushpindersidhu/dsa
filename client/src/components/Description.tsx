@@ -1,6 +1,6 @@
 import { MdDescription } from "react-icons/md";
 
-const Description: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Description: React.FC<{ desc: string }> = ({ desc }) => {
   return (
     <div className="w-full h-full">
       <h3 className="text-gray-300 text-sm font-semibold px-4 flex items-center bg-secondary py-2">
@@ -8,7 +8,9 @@ const Description: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         Description
       </h3>
 
-      <div className="px-4 py-2 text-gray-300">{children}</div>
+      <div className="px-4 py-2 text-gray-300">
+        <div dangerouslySetInnerHTML={{ __html: desc }} />
+      </div>
     </div>
   );
 };

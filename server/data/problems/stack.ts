@@ -1,37 +1,28 @@
-import Stack from "./descriptions/stack";
-import IDataStructure from "./interfaces/IDataStructure";
-
-const DataStructures: IDataStructure[] = [
-  {
-    id: 1,
-    name: "Stack",
-    description: Stack,
-    code: `class Stack {
-  constructor() {
-  }
+class Stack {
+  constructor() {}
 
   // Adds an element to the stack
-  push(element) {
+  push(item: number) {
     // Implementation goes here
   }
 
   // Removes and returns the top element from the stack
-  pop() {
+  pop(): number {
     // Implementation goes here
   }
 
   // Returns the top element of the stack without removing it
-  peek() {
+  peek(): number {
     // Implementation goes here
   }
 
   // Returns true if the stack is empty, false otherwise
-  isEmpty() {
+  isEmpty(): boolean {
     // Implementation goes here
   }
 
   // Returns true if the stack is full, false otherwise
-  isFull() {
+  isFull(): boolean {
     // Implementation goes here
   }
 
@@ -39,10 +30,3 @@ const DataStructures: IDataStructure[] = [
 }
 
 export default Stack;
-`,
-    solution: "",
-    completed: false,
-  },
-];
-
-export default DataStructures;
