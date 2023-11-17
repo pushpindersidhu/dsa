@@ -1,0 +1,68 @@
+class Stack {
+  items:number[] = []
+  top = -1
+  constructor() {}
+
+  // Adds an element to the stack
+  push(item: number) {
+    this.items[this.top++] = item
+  }
+
+  // Removes and returns the top element from the stack
+  pop(): number {
+    const val = this.items[this.top];
+    this.top--;
+    return val;
+  }
+
+  // Returns the top element of the stack without removing it
+  peek(): number {
+    return this.items[this.top];
+  }
+
+  // Returns true if the stack is empty, false otherwise
+  isEmpty(): boolean {
+    // Implementation goes here
+    return this.top === -1
+  }
+
+  // Returns true if the stack is full, false otherwise
+  isFull(): boolean {
+    // Implementation goes here
+    return false;
+  }
+
+  // Add any other methods or properties as needed
+}
+
+export default Stack;
+describe("Stack", () => {
+  let stack: Stack;
+
+  beforeEach(() => {
+    stack = new Stack();
+  });
+
+  it("should initialize an empty stack", () => {
+    expect(stack.isEmpty()).toBe(true);
+    expect(stack.isFull()).toBe(false);
+  });
+
+  it("should push and pop elements correctly", () => {
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    expect(stack.pop()).toBe(3);
+    expect(stack.pop()).toBe(2);
+    expect(stack.pop()).toBe(1);
+    expect(stack.isEmpty()).toBe(true);
+  });
+
+  it("should peek at the top element without removing it", () => {
+    stack.push(42);
+
+    expect(stack.peek()).toBe(42);
+    expect(stack.isEmpty()).toBe(false);
+  });
+});
