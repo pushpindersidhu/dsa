@@ -2,6 +2,26 @@ import heapq
 from collections import defaultdict
 from typing import Dict, List
 
+# Problem: https://neetcode.io/problems/dijkstra
+# Implement Dijkstra's shortest path algorithm.
+
+# Given a weighted, directed graph, and a starting vertex, return the
+# shortest distance from the starting vertex to every vertex in the graph.
+
+# Input:
+
+# number_of_vertices - the number of vertices in the graph.
+# Each vertex is labeled from 0 to n - 1.
+
+# edges - a list of tuples, each representing a directed edge in the form (u, v, w),
+# where u is the source vertex, v is the destination vertex,
+# and w is the weight of the edge, where (1 <= w <= 10).
+
+# start - starting vertex from which to start the algorithm, where (0 <= src < n).
+
+# Note: If a vertex is unreachable from the source vertex,
+# the shortest path distance for the unreachable vertex should be -1.
+
 
 class Dijkstra:
     @staticmethod
