@@ -1,14 +1,11 @@
 from typing import Optional
-from typing_extensions import Self
 
 
 class BSTNode:
-    def __init__(
-        self, value: int, left: Optional[Self] = None, right: Optional[Self] = None
-    ) -> None:
+    def __init__(self, value: int) -> None:
         self.value = value
-        self.left = left
-        self.right = right
+        self.left: Optional[BSTNode] = None
+        self.right: Optional[BSTNode] = None
 
 
 class BST:
