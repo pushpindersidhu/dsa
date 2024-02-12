@@ -2,7 +2,9 @@ import heapq
 from collections import defaultdict
 from typing import Dict, List
 
-# Problem: https://neetcode.io/problems/dijkstra
+# Problem: Dijkstra's Shortest Path Algorithm
+# https://neetcode.io/problems/dijkstra
+
 # Implement Dijkstra's shortest path algorithm.
 
 # Given a weighted, directed graph, and a starting vertex, return the
@@ -35,14 +37,14 @@ class Dijkstra:
         shortest = {}
         heap = [(0, start)]
         while heap:
-            w1, u1 = heapq.heappop(heap)
-            if u1 in shortest:
+            w1, v1 = heapq.heappop(heap)
+            if v1 in shortest:
                 continue
 
-            shortest[u1] = w1
-            for u2, w2 in adj[u1]:
-                if u2 not in shortest:
-                    heapq.heappush(heap, (w1 + w2, u2))
+            shortest[v1] = w1
+            for v2, w2 in adj[v1]:
+                if v2 not in shortest:
+                    heapq.heappush(heap, (w1 + w2, v2))
 
         for i in range(number_of_vertices):
             if i not in shortest:
