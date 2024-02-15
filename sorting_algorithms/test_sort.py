@@ -2,7 +2,7 @@ import unittest
 from typing import List, Callable
 
 
-def test(sort: Callable[[List[int]], None]) -> None:
+def test(sort: Callable[[List[int]], List[int] | None]) -> None:
     class TestSort(unittest.TestCase):
         def test_sort(self):
             test_cases = [
@@ -18,8 +18,11 @@ def test(sort: Callable[[List[int]], None]) -> None:
 
             for input, expected in test_cases:
                 with self.subTest(input=input, expected=expected):
-                    sort(input)
-                    self.assertEqual(input, expected)
+                    output = sort(input)
+                    if output is not None:
+                        self.assertEqual(output, expected)
+                    else:
+                        self.assertEqual(input, expected)
 
     suite = unittest.TestLoader().loadTestsFromTestCase(TestSort)
     unittest.TextTestRunner().run(suite)
