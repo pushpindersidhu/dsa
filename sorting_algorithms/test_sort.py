@@ -1,8 +1,8 @@
 import unittest
-from typing import List, Callable
+from typing import List, Callable, Optional
 
 
-def test(sort: Callable[[List[int]], List[int] | None]) -> None:
+def test(sort: Callable[[List[int]], Optional[List[int]]]) -> None:
     class TestSort(unittest.TestCase):
         def test_sort(self):
             test_cases = [
